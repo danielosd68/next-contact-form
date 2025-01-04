@@ -4,13 +4,15 @@
 
 :root {
   --background: hsl(148, 38%, 91%);
-  --foreground: hsl(187, 24%, 22%);
+  --foreground: hsl(186, 15%, 59%);
+  --text-color: hsl(187, 24%, 22%);
   --main-green: hsl(169, 82%, 27%);
+  --error: hsl(0, 66%, 54%);
 }
 
 body {
   min-height: 100vh;
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
