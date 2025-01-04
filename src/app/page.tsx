@@ -1,34 +1,8 @@
 "use client";
-import {HTMLInputTypeAttribute, ReactNode, useState} from "react";
-
-const TextInput = (props: {fieldset: string | ReactNode, name: string, type?: HTMLInputTypeAttribute}) => {
-    return (
-        <>
-            <p className={'mb-3'}>{props.fieldset}</p>
-            <input type={props.type} name={props.name} className={'outline-none w-full h-[45px] p-5 text-[16px] rounded-lg border-[1px] border-[--foreground]'}/>
-        </>
-    )
-}
-const RadioOption = (props: {id: string, name: string, label: string}) => {
-    return (
-        <div
-            className={'outline-none w-full h-[45px] text-[21px] rounded-lg border-[1px] border-[--foreground] flex justify-start items-center pl-5'}>
-            <input type="radio" id={props.id} name={props.name} className={'mr-5'}/>
-            <label htmlFor={props.id}>{props.label}</label>
-        </div>
-    )
-}
-
-const RadioGroup = (props: {children: ReactNode, fieldset: string}) => {
-    return (
-        <>
-            <p className={'mb-3'}>Rodzaj pytania</p>
-            <div className={'grid grid-cols-2 gap-5'}>
-                {props.children}
-            </div>
-        </>
-    )
-}
+import {useState} from "react";
+import TextInput from "@/app/components/TextInput/TextInput";
+import RadioGroup from "@/app/components/RadioGroup/RadioGroup";
+import RadioOption from "@/app/components/RadioOption/RadioOption";
 
 export default function Home() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
