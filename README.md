@@ -7,6 +7,7 @@ This is my own app created in Next.js
 - Tailwind CSS
 - TypeScript
 - ESLint
+- Yup
 
 Run the project by:
 `yarn run dev`
