@@ -4,7 +4,7 @@ import TextInput from "@/app/components/TextInput/TextInput";
 import {bool, object, string} from "yup";
 import {ErrorMessage, Field, Form, Formik, FormikHelpers} from "formik";
 
-export default function Home() {
+export default function Page() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState(false);
     const [errMessage, setErrMessage] = useState("");
@@ -20,8 +20,12 @@ export default function Home() {
         agreement: bool().oneOf([true], "Zgoda wymagana").required()
     });
 
-    const handleSubmit = (values, formikHelpers: FormikHelpers<any>) => {
-        setLoading(true);
+    const handleSubmit = async (values, formikHelpers: FormikHelpers<any>) => {
+
+        return await fetch('/api', {
+            method: 'post',
+            body: JSON.stringify(values)
+        });
     }
 
     return (
